@@ -1,7 +1,7 @@
 resource "kubernetes_secret" "credential_secret" {
   count = length(keys(var.databases))
   metadata {
-    name      = "cloudsql-${element(keys(var.databases), count.index)}-${var.environment}"
+    name      = "cloudsql-${element(keys(var.databases), count.index)}"
     namespace = var.credential_secret_namespace
   }
 
