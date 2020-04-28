@@ -6,6 +6,7 @@ resource "kubernetes_secret" "credential_secret" {
   }
 
   data = {
+    address  = google_sql_database_instance.instance.ip_address.0.ip_address
     instance = google_sql_database_instance.instance.connection_name
     database = google_sql_database.database[count.index].name
     username = google_sql_user.database_user[count.index].name
