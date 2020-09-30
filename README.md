@@ -4,7 +4,7 @@ Module made for Terraform 0.12.x
 
 ### Code examples
 
-```
+```tf
 module "cloudsql_postgres_apps" {
   source = "github.com/bulderbank/terraform-google-cloudsql"
 
@@ -34,6 +34,4 @@ module "cloudsql_postgres_apps" {
     }
   }
 }
-
-
 ```
