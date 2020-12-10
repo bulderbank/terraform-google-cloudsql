@@ -24,4 +24,11 @@ resource "google_sql_database_instance" "instance" {
       update_track = "stable"
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      settings[0].replication_type
+    ]
+  }
 }
+
